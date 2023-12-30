@@ -270,4 +270,23 @@
     })
   });
 
+  /**HEROIMAGE ANIMATION*/
+  var imageIndex = 0;
+  var imagesArray = [
+    "url('./img/HEROoNE.jpg') center",
+    "url('./img/Herotwo.jpg') center",
+    "url('./img/hero-bg.jpg') center"
+  ];
+
+  function changeBackground() {
+    var index = imageIndex++ % imagesArray.length;
+    $("section#hero").css("background", imagesArray[index] );
+  }
+
+  $(document).ready(function() {
+    $("section#hero").css("background", imagesArray[0] ); //Sets the first image
+    setInterval(changeBackground, 4000);
+  });
+
+
 })()
